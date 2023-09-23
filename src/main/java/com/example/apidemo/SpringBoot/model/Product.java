@@ -7,14 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "tblProduct")
 public class Product {
     //pk
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String productName;
-    private int year;
+    private int productYear;
     private Double price;
     private String url;
 
@@ -22,9 +22,9 @@ public class Product {
 
     }
 
-    public Product(String productName, int year, Double price, String url) {
+    public Product(String productName, int productYear, Double price, String url) {
         this.productName = productName;
-        this.year = year;
+        this.productYear = productYear;
         this.price = price;
         this.url = url;
     }
@@ -45,12 +45,12 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getYear() {
-        return year;
+    public int getProductYear() {
+        return productYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setProductYear(int productYear) {
+        this.productYear = productYear;
     }
 
     public Double getPrice() {
@@ -71,8 +71,9 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", productName=" + productName + ", year=" + year + ", price=" + price + ", url="
-                + url + "]";
+        return "Product [id=" + id + ", productName=" + productName + ", productYear=" + productYear + ", price="
+                + price + ", url=" + url + "]";
     }
+    
 
 }
